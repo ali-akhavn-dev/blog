@@ -1,5 +1,12 @@
+import HomePage from "./components/home/HomePage";
+import AppLayout from "./components/layouts/AppLayout";
+
 function App() {
-  return <div></div>;
+  return (
+    <AppLayout>
+      <HomePage />
+    </AppLayout>
+  );
 }
 
 export default App;
