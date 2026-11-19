@@ -12,9 +12,7 @@ import { ThemeProvider } from "@mui/material";
 import theme from "./Mui/theme";
 
 const client = new ApolloClient({
-  link: new HttpLink({
-    uri: "https://us-west-2.cdn.hygraph.com/content/cmw4svzz80mjx06v23rz7vl7d/master",
-  }),
+  link: new HttpLink({ uri: process.env.REACT_APP_GRAPHCMS_URI }),
   cache: new InMemoryCache(),
 });
 
