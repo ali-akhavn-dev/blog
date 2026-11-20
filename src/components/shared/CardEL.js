@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import {
   Avatar,
   Button,
@@ -9,8 +11,6 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
-
-import { Link } from "react-router";
 
 function CardEL({ title, slug, coverPhoto, author }) {
   return (
@@ -59,15 +59,18 @@ function CardEL({ title, slug, coverPhoto, author }) {
       <Divider variant="middle" sx={{ margin: "10px" }} />
 
       <CardActions>
-        {/* <Link to={`/blogs/${slug}`} style={{ width: "100%", textDecoration: "none" }}> */}
-        <Button
-          variant="outlined"
-          size="small"
-          sx={{ flexGrow: 1, borderRadius: 2 }}
+        <Link
+          to={`/blogs/${slug}`}
+          style={{ width: "100%", textDecoration: "none" }}
         >
-          مطالعه مقاله
-        </Button>
-        {/* </Link> */}
+          <Button
+            variant="outlined"
+            size="small"
+            sx={{ width: "100%", borderRadius: 2 }}
+          >
+            مطالعه مقاله
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );

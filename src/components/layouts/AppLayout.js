@@ -1,11 +1,12 @@
 import Header from "./Header";
 import Footer from "./Footer";
+import { Outlet } from "react-router";
 
-function AppLayout({ children }) {
+function AppLayout() {
   return (
     <>
       <Header />
-      {children}
+      <Outlet />
       <Footer />
     </>
   );

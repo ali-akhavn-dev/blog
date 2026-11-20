@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import { Avatar, Box, Divider, Grid, Typography } from "@mui/material";
 
 import { useQuery } from "@apollo/client/react";
@@ -28,8 +30,8 @@ function Authors() {
       {data.authors.map((author, index) => (
         <Box key={author.id} component="div" sx={{ width: "100%" }}>
           <Grid size={{ xs: 12 }} sx={{ padding: 1.5 }}>
-            <a
-              href={`/authors/${author.slug}`}
+            <Link
+              to={`/authors/${author.slug}`}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -46,7 +48,7 @@ function Authors() {
               >
                 {author.name}
               </Typography>
-            </a>
+            </Link>
           </Grid>
           {index !== data.authors.length - 1 && (
             <Grid size={{ xs: 12 }}>
