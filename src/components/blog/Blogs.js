@@ -6,15 +6,13 @@ import { GET_BLOGS } from "../../graphql/queries";
 import CardEL from "../shared/CardEL";
 
 function Blogs() {
-  const { loading, data, errors } = useQuery(GET_BLOGS);
-
-  console.log(loading, data);
+  const { loading, data, error } = useQuery(GET_BLOGS);
 
   if (loading) {
     return <h3>loading...</h3>;
   }
 
-  if (errors) {
+  if (error) {
     return <h3>something went wrong:))</h3>;
   }
 
