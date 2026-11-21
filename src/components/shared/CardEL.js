@@ -15,20 +15,22 @@ import {
 function CardEL({ title, slug, coverPhoto, author }) {
   return (
     <Card sx={{ boxShadow: "rgba(0,0,0,0.2) 0 4px 12px", borderRadius: 4 }}>
-      <CardHeader
-        avatar={<Avatar src={author.avatar[0].url} />}
-        title={
-          <Typography
-            component="p"
-            variant="p"
-            sx={{ fontWeight: 500 }}
-            color="secondary"
-          >
-            {author.name}
-          </Typography>
-        }
-        sx={{ gap: 2 }}
-      />
+      {author && (
+        <CardHeader
+          avatar={<Avatar src={author.avatar[0].url} />}
+          title={
+            <Typography
+              component="p"
+              variant="p"
+              sx={{ fontWeight: 500 }}
+              color="secondary"
+            >
+              {author.name}
+            </Typography>
+          }
+          sx={{ gap: 2 }}
+        />
+      )}
 
       <CardMedia
         component="img"
