@@ -4,12 +4,13 @@ import { Grid } from "@mui/material";
 
 import { GET_BLOGS } from "../../graphql/queries";
 import CardEL from "../shared/CardEL";
+import Loader from "../shared/Loader";
 
 function Blogs() {
   const { loading, data, error } = useQuery(GET_BLOGS);
 
   if (loading) {
-    return <h3>loading...</h3>;
+    return <Loader />;
   }
 
   if (error) {

@@ -5,6 +5,7 @@ import { GET_AUTHOR } from "../../graphql/queries";
 import sanitizeHtml from "sanitize-html";
 
 import CardEl from "../shared/CardEL";
+import Loader from "../shared/Loader";
 
 import { Avatar, Container, Grid, Typography } from "@mui/material";
 
@@ -18,7 +19,7 @@ function AuthorPage() {
   console.log({ loading, data });
 
   if (loading) {
-    return <h3>loading...</h3>;
+    return <Loader />;
   }
 
   if (error) {

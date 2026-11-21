@@ -5,6 +5,7 @@ import { Avatar, Box, Divider, Grid, Typography } from "@mui/material";
 import { useQuery } from "@apollo/client/react";
 
 import { GET_AUTHORS } from "../../graphql/queries";
+import Loader from "../shared/Loader";
 
 function Authors() {
   const { loading, data, error } = useQuery(GET_AUTHORS);
@@ -12,7 +13,7 @@ function Authors() {
   console.log({ loading, data });
 
   if (loading) {
-    return <h3>loading...</h3>;
+    return <Loader />;
   }
 
   if (error) {
