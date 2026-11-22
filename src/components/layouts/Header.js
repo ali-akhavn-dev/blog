@@ -1,6 +1,6 @@
 import { AppBar, Container, Toolbar, Typography } from "@mui/material";
 
-import BookIcon  from "@mui/icons-material/Book"
+import BookIcon from "@mui/icons-material/Book";
 
 function Header() {
   return (
@@ -12,7 +12,7 @@ function Header() {
             variant="h5"
             sx={{ flexGrow: "1", fontWeight: "700" }}
           >
-            وبلاگ بوتواستارت
+            وبلاگ فرانت‌هاب
           </Typography>
           <BookIcon />
         </Toolbar>
