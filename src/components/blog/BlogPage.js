@@ -4,9 +4,6 @@ import { useQuery } from "@apollo/client/react";
 
 import sanitizeHtml from "sanitize-html";
 
-import { GET_BLOG } from "../../graphql/queries";
-import Loader from "../shared/Loader";
-
 import {
   Avatar,
   Box,
@@ -16,6 +13,13 @@ import {
   Typography,
 } from "@mui/material";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
+
+import { GET_BLOG } from "../../graphql/queries";
+import Loader from "../shared/Loader";
+
+
+import CommentForm from "../comment/CommentForm";
+import Comments from "../comment/Comments";
 
 function BlogPage() {
   const { blogSlug } = useParams();
@@ -36,8 +40,6 @@ function BlogPage() {
   const {
     post: { title, slug, content, author, coverPhoto },
   } = data;
-
-  console.log(data);
 
   return (
     <Container maxWidth="lg">
@@ -100,6 +102,14 @@ function BlogPage() {
           <div
             dangerouslySetInnerHTML={{ __html: sanitizeHtml(content.html) }}
           ></div>
+        </Grid>
+
+        <Grid size={{ xs: 12 }}>
+          <CommentForm slug={slug} />
+        </Grid>
+
+        <Grid size={{ xs: 12 }}>
+          <Comments slug={slug} />
         </Grid>
       </Grid>
     </Container>
