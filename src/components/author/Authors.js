@@ -10,8 +10,6 @@ import Loader from "../shared/Loader";
 function Authors() {
   const { loading, data, error } = useQuery(GET_AUTHORS);
 
-  console.log({ loading, data });
-
   if (loading) {
     return <Loader />;
   }

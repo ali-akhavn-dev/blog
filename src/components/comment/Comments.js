@@ -10,8 +10,6 @@ function Comments({ slug }) {
     variables: { slug },
   });
 
-  console.log({ loading, data, error });
-
   if (loading) {
     return <Loader />;
   }

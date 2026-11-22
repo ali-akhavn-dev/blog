@@ -16,8 +16,6 @@ function AuthorPage() {
     variables: { slug: authorSlug },
   });
 
-  console.log({ loading, data });
-
   if (loading) {
     return <Loader />;
   }

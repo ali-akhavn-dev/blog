@@ -13,8 +13,7 @@ function CommentForm({ slug }) {
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
 
-  const [submitForm, { loading, data, error }] = useMutation(SEND_COMMENT);
-  // console.log({ loading, data });
+  const [submitForm, { loading }] = useMutation(SEND_COMMENT);
 
   const emptyFields = () => {
     setName("");
@@ -25,7 +24,7 @@ function CommentForm({ slug }) {
   const handleSendComment = () => {
     if (name && email && text) {
       submitForm({ variables: { name, email, text, slug } });
-      // emptyFields()
+      emptyFields();
 
       return toast.success("کامنت با موفقیت ارسال شد", {
         style: { fontFamily: "YekanBakh" },
