@@ -17,7 +17,6 @@ import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import { GET_BLOG } from "../../graphql/queries";
 import Loader from "../shared/Loader";
 
-
 import CommentForm from "../comment/CommentForm";
 import Comments from "../comment/Comments";
 
@@ -68,7 +67,13 @@ function BlogPage() {
             {title}
           </Typography>
 
-          <Button onClick={() => navigate(-1)}>
+          <Button
+            onClick={() =>
+              navigate(-1, {
+                preventScrollReset: false,
+              })
+            }
+          >
             <ArrowBackRoundedIcon />
           </Button>
         </Grid>
