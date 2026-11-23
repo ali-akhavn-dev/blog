@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# 📝 FrontHub Blog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**A simple blog built to explore GraphQL, Apollo Client, and a headless CMS.**
 
-## Available Scripts
+[![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![GraphQL](https://img.shields.io/badge/GraphQL-API-E10098?logo=graphql&logoColor=white)](https://graphql.org/)
+[![Apollo Client](https://img.shields.io/badge/-Apollo_Client-311C87?logo=apollographql&logoColor=white)](https://www.apollographql.com/docs/react/)
+[![Hygraph](https://img.shields.io/badge/CMS-Hygraph-6C47FF)](https://hygraph.com/)
+[![MUI](https://img.shields.io/badge/UI-Material_UI-007FFF?logo=mui&logoColor=white)](https://mui.com/)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ About the project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+FrontHub Blog is a small React application where readers can explore authors, read their blog posts, and leave comments. Its main purpose is educational: practicing **GraphQL queries and mutations** and integrating a Hygraph API with **Apollo Client**.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Features
 
-### `npm test`
+- 👥 Browse authors and view their details and posts
+- 📚 Explore blog posts and read full articles
+- 💬 View comments and submit a comment on a post
+- 🌐 Use a right-to-left layout with Material UI
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Tech stack
 
-### `npm run build`
+| Technology | Role |
+| --- | --- |
+| [React](https://react.dev/) | User interface |
+| [Create React App](https://create-react-app.dev/) | Project setup and scripts |
+| [GraphQL](https://graphql.org/) | API query language |
+| [Apollo Client](https://www.apollographql.com/docs/react/) | GraphQL requests and in-memory caching |
+| [Hygraph](https://hygraph.com/) | Headless CMS and GraphQL API |
+| [React Router](https://reactrouter.com/) | Client-side routing |
+| [Material UI](https://mui.com/) and Emotion | UI components, styling, and RTL support |
+| [sanitize-html](https://www.npmjs.com/package/sanitize-html) | HTML sanitization |
+| React Toastify and React Loader Spinner | Notifications and loading indicators |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🏁 Getting started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node.js and npm installed on your machine
+- A Hygraph project with content models and API permissions compatible with this application's queries and mutation
 
-### `npm run eject`
+### 1. Get the project
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Clone the repository using its URL from the repository's **Code** button:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone <repository-url>
+cd blog
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Replace `<repository-url>` with the actual URL. If the cloned directory has a different name, use that name instead of `blog`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2. Install dependencies
 
-## Learn More
+```bash
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Configure the environment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Create a `.env` file in the project root and add your Hygraph GraphQL endpoint:
 
-### Code Splitting
+```dotenv
+REACT_APP_GRAPHCMS_URI=https://your-hygraph-endpoint
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Replace the example URL with your actual endpoint. Restart the development server after changing the `.env` file.
 
-### Analyzing the Bundle Size
+> **Security note:** Do not commit your `.env` file. In Create React App, variables prefixed with `REACT_APP_` are included in the client bundle and can be inspected by users. Never put secret tokens or credentials in them. Configure Hygraph permissions carefully, especially for public comment creation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 4. Start the app
 
-### Making a Progressive Web App
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The development server usually runs at [http://localhost:3000](http://localhost:3000).
 
-### Advanced Configuration
+## 📜 Available scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+| Command | Description |
+| --- | --- |
+| `npm start` | Run the app in development mode |
+| `npm run build` | Create an optimized production build in `build/` |
+| `npm test` | Launch the test runner in interactive mode |
 
-### Deployment
+## 🗂️ Project structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```text
+src/
+├── components/
+│   ├── author/      # Author-related components
+│   ├── blog/        # Blog post components
+│   ├── comment/     # Comment components
+│   ├── home/        # Home page components
+│   ├── layouts/     # Shared page layout
+│   └── shared/      # Shared components
+├── graphql/
+│   ├── queries.js   # GraphQL queries
+│   └── mutations.js # GraphQL mutations
+├── Mui/             # Material UI theme configuration
+├── styles/          # Global styles and fonts
+├── App.js           # Main app component
+├── index.js         # Entry point and providers
+└── routes.js        # Application routes
+```
 
-### `npm run build` fails to minify
+## 🧭 Routes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Route | Page |
+| --- | --- |
+| `/` | Home |
+| `/authors/:authorSlug` | Author details |
+| `/blogs/:blogSlug` | Blog post details |
+
+## 🔌 GraphQL integration
+
+The operations in `src/graphql/queries.js` fetch posts, authors, individual author and post details, and comments. The `SEND_COMMENT` mutation in `src/graphql/mutations.js` creates a comment and connects it to a post using its slug.
+
+Apollo Client is configured in `src/index.js` with `HttpLink` and `InMemoryCache`. To use your own Hygraph project, its schema must match the fields and relationships used by these operations, and its API permissions must allow the required requests. Whether a newly submitted comment appears in queries also depends on your Hygraph publishing and permission settings.
+
+---
+
+Made as a learning project to get hands-on experience with GraphQL and Apollo Client. ✨
